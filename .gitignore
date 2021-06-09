@@ -1,4 +1,4 @@
-sh/credentials.sh
-js/credentials.js
+#sh/credentials.sh
+#js/credentials.js
 js/package-lock.json
 js/node_modules/*
