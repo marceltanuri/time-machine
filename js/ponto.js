@@ -1,9 +1,13 @@
 const api = require('./api');
 const random = require('./random');
+const banner = require('./banner');
 const chalk = require('chalk');
 const Confirm = require('prompt-confirm');
 const myArgs = process.argv.slice(2);
 let datetime = myArgs[0];
+
+
+console.log(chalk.cyan(banner.print_banner()));
 
 const prompt = new Confirm('Do you confirm operation with param: ' + datetime + ' ?');
 
@@ -42,7 +46,7 @@ const prompt = new Confirm('Do you confirm operation with param: ' + datetime + 
         }
         
         datetime = new Date(datetime).getTime();
-        api.ponto(datetime,true);
+        api.send(datetime,true);
     }
     
     function allDay(startDate){
@@ -75,10 +79,10 @@ const prompt = new Confirm('Do you confirm operation with param: ' + datetime + 
         console.info(chalk.bgYellow.black("Total worked time: " + workedTimeInMinutes + " minutes"))
         
     
-        api.ponto(startDate,true);
-        api.ponto(pauseDate,true);
-        api.ponto(returnDate,true);
-        api.ponto(endDate,true);
+        api.send(startDate,true);
+        api.send(pauseDate,true);
+        api.send(returnDate,true);
+        api.send(endDate,true);
     }
   }
 

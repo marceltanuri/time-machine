@@ -7,16 +7,21 @@ function send(datetime, offline){
   console.log("Starting API calling...")
   console.log(chalk.blue("Time to be entered: " + new Date(datetime)))
     let cords = {latitude:"", longitude:""}
-    geo.getCoordinates().then(x=>{cords.latitude = x.latitude; cords.longitude = x.longitude; callAPI(datetime, offline, cords)})
+    geo.getCoordinates().then(x=>{
+      if(x!=null){
+        cords.latitude = x.latitude; cords.longitude = x.longitude; 
+        callAPI(datetime, offline, cords)
+      }else{
+        console.error("Unable to get geolocation. Try again soon")
+      }
+    })
 }
 
 
 function callAPI(datetime, offline, cords){
   let urlArray=['h','t','t','p','s',':','/','/','w','w','w','.','a','h','g','o','r','a','.','c','o','m','.','b','r','/','b','a','t','i','d','a','o','n','l','i','n','e','/','v','e','r','i','f','y','I','d','e','n','t','i','f','i','c','a','t','i','o','n'];
-  let url = "";
-  urlArray.forEach(element => {
-    url = url + element;
-  });
+  let url = urlArray.join("")
+  
   axios
     .post(url, {
       identity 	         : credentials.config.machinecode,
@@ -48,4 +53,4 @@ function callAPI(datetime, offline, cords){
   });
 }
 
-module.exports.ponto = send;
+module.exports.send = send;
