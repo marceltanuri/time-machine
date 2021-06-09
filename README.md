@@ -2,14 +2,14 @@
 
 Here is automation tool for consuming Company entering time API. It was created to help employees to register their forgoten datetime.
 
-How to use it:
+You have two ways to user this tools - with NodeJS or with Bash:
 
 ## With NodeJS
 1. Clone de repository
 2. Install NodeJS if you haven't already.
 3. Go to `js` directory in this project and...
 4. Run `npm install`
-5. Config your credentials in `credentials.js` file. Read the instructions sections below "Before you start"
+5. Config your credentials in `credentials.js` file. *Read the instructions sections below "Before you start*"
 6. All set! To enter time using API run the following...
 7. `node ponto.js yyyy-MM-ddTHH:mm:ss`. 
    
@@ -31,7 +31,7 @@ Notes:
 
 ----------------------------------------------------------------
 
-### Antes de Começar!
+### Before you start!!
 ### Configurando o seu arquivo de configuração
 
 Como obter seu machinecode:

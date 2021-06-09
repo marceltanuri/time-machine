@@ -1,10 +1,13 @@
 const credentials = require('./credentials')
 const axios = require('axios')
 const geo = require('./geo')
+const chalk = require('chalk');
 
 function send(datetime, offline){
+  console.log("Starting API calling...")
+  console.log(chalk.blue("Time to be entered: " + new Date(datetime)))
     let cords = {latitude:"", longitude:""}
-    geo.getCoordinates().then(x=>{cords.latitude = x.latitude; cords.longitude = x.longitude; callAPI(datetime, offline, cords)});   
+    geo.getCoordinates().then(x=>{cords.latitude = x.latitude; cords.longitude = x.longitude; callAPI(datetime, offline, cords)})
 }
 
 
@@ -34,9 +37,9 @@ function callAPI(datetime, offline, cords){
   {headers: {'Cookie': 'company='+credentials.companyId}})
   .then(function (response) {
     if(response.data.result==true){
-      console.log("Marcação de ponto realizada com sucesso! Horário da batida: " + new Date(datetime));
+      console.log(chalk.bgGreen.black("Marcação de ponto realizada com sucesso! Horário da batida: " + new Date(datetime)));
     }else{
-      console.log("Marcação de ponto realizada não pode ser concluída :( Horário que seria a batida: " + new Date(datetime));
+      console.log(chalk.bgRed.black("Marcação de ponto não pode ser concluída :("));
     }
     console.log(response.data);
   })
@@ -46,5 +49,3 @@ function callAPI(datetime, offline, cords){
 }
 
 module.exports.ponto = send;
-
-

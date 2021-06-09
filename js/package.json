@@ -21,6 +21,8 @@
   "homepage": "https://github.com/marceltanuri/time-machine#readme",
   "dependencies": {
     "axios": "^0.21.1",
-    "fetch-node": "0.0.1"
+    "chalk": "^4.1.1",
+    "fetch-node": "0.0.1",
+    "prompt-confirm": "^2.0.4"
   }
 }
