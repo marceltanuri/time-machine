@@ -1,0 +1,26 @@
+{
+  "name": "time-machine",
+  "version": "1.0.0",
+  "description": "Helpful tool to enter times in Company entering time API",
+  "main": "ponto.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marceltanuri/time-machine.git"
+  },
+  "keywords": [
+    "time-machine"
+  ],
+  "author": "Marcel Tanuri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marceltanuri/time-machine/issues"
+  },
+  "homepage": "https://github.com/marceltanuri/time-machine#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "fetch-node": "0.0.1"
+  }
+}
