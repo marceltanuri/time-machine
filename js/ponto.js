@@ -7,7 +7,7 @@ const myArgs = process.argv.slice(2);
 let datetime = myArgs[0];
 
 
-console.log(chalk.cyan(banner.print_banner()));
+console.log(chalk.hex("#bc38e0")(banner.print_banner()));
 
 const prompt = new Confirm('Do you confirm operation with param: ' + datetime + ' ?');
 
